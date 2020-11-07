@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>eGeGuate - Página Principal</title>
+	<!--
+
+    Template 2106 Soft Landing
+
+	http://www.tooplate.com/view/2106-soft-landing
+
+    -->
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="team" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+     <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body onload="funcion_inicial()">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- MENU -->
+     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <!-- LOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">
+                         <img src="images/eGeGuate.png" alt="eGeGuate" height="125">
+                    </a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#home" class="smoothScroll">Votación</a></li>
+                         <li><a href="#feature" class="smoothScroll">Resultados</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="home" data-stellar-background-ratio="0.5">
+          <div class="overlay"></div>
+          <div class="container" id="container-lista-estudiantes">
+               <br><br>
+          </div>
+     </section>
+
+
+     <!-- FEATURE -->
+     <section id="feature" data-stellar-background-ratio="0.5">
+          <div class="container" id="container-lista-grupos">
+               <div class="row">
+                    <div class="col-md-offset-3 col-md-6 col-sm-12">
+                         <div class="home-info">
+                              <form action="" method="get" class="online-form">
+                                   <h3 style="color: #5c6c7c;">ID Grupo</h3>
+                                   <input type="text" name="user" id="id-grupo" class="form-control" placeholder="Ingresar el ID del Grupo" required>
+                                   <br><br><h3 style="color: #5c6c7c;">Fotografía</h3>
+                                   <div class="pricing-bottom">
+                                        <button type="button" class="section-btn pricing-btn" onclick="promptFilenameGrupo()" style="left: 205px;">Cargar</button>
+                                   </div>
+                                   <div class="pricing-bottom" style="padding-top: 50px;">
+                                         <img id="img-grupo"> </img>
+                                   </div>
+                                   <br>
+                                   <input type="button" onclick="registrarGrupo()" class="form-control" name="ingresar grupo" value="Registrar" style="background-color: #29ca8e; color: white; border: 0; box-shadow: none;">
+                              </form>
+                         </div>
+                    </div>
+               </div>
+               <br><br>
+          </div>
+     </section>
+
+     
+     <!-- ABOUT -->
+     <section id="about" data-stellar-background-ratio="0.5">
+          <div class="container" id="container-lista-asistencias">
+               
+          </div>
+     </section>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/custom.js"></script>
+
+     <script src="js/students.js"></script>
+</body>
+</html>
