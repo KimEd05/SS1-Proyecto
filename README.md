@@ -12,7 +12,7 @@ De la misma forma, existen otra serie de problemas que van asociados al error hu
 > - `Amazon Polly`: Para las personas no videntes, la aplicación se ejecutará a través de audios que expliquen el proceso de votación, así como el listado de integrantes de las papeletas.
 > - `Amazon Transcribe`: La aplicación permitirá procesar la voz de las personas a texto, lo cual le concederá la oportunidad a los ciudadanos no videntes de realizar su elección después de escuchar el listado de los integrantes de las papeletas.
 > - `Amazon DynamoDB`: Servicio utilizado para almacenar los datos de prueba del sistema, recolectados a través de la simulación de votaciones.
-> - `Amazon S3`: Servicio en el que se encuentran almacenadas las fotografías de los ciudadanos de prueba del sistema, para realizar el reconocimiento facial, así como el sitio web estático.
+> - `Amazon S3`: Servicio en el que se encuentran almacenadas las fotografías de los ciudadanos de prueba del sistema para realizar el reconocimiento facial, así como el sitio web estático.
 
 ---
 
