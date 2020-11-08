@@ -27,8 +27,10 @@ function getDataUrl(img) {
     return canvas.toDataURL('image/jpeg');
 }
 
+function makeid() { var text = ""; var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"; for (var i = 0; i < 10; i++) text += possible.charAt(Math.floor(Math.random() * possible.length)); return text; }
+
 async function iniciarSesionCam() {
-    /*var video = document.getElementById('webcam');
+    var video = document.getElementById('webcam');
     
     const canvas = document.createElement("canvas");
     canvas.width = video.clientWidth;
@@ -37,21 +39,24 @@ async function iniciarSesionCam() {
 
     const image = new Image()
     image.src = canvas.toDataURL();
-    console.log(image.src);
-    var usuario = document.getElementById("usuario").value;
-    var raw = JSON.stringify({"user":usuario, "password":"", "foto":image.src});
+    var raw = JSON.stringify({"name":makeid(), "sourceBase64":image.src});
     var requestOptions = {
         method: 'POST',
         headers: myHeaders,
         body: raw,
         redirect: 'follow'
     };
-    fetch("https://d2mkcjc0c59xy8.cloudfront.net/login", requestOptions)
+    fetch("https://yfsgst38xj.execute-api.us-east-2.amazonaws.com/develop/serverless/postLogin", requestOptions)
     .then(response => response.text())
     .then(result => {
         var res = JSON.parse(result)
         if(res.estado === "ok") {
-            window.location = "principal.html";
+            document.getElementById('audio').play()
+            $('#myModal').modal('show');
+            setTimeout(() => {
+                window.location = "principal.html";
+            }, 9000);
+            
         } else {
             alert("Credenciales incorrectas");
         }
@@ -59,13 +64,15 @@ async function iniciarSesionCam() {
     .catch(error => {
         alert("Credenciales incorrectas");
         console.log('error', error)
-    });*/
-    document.getElementById('audio').play()
-    setTimeout(() => {
-        window.location = "principal.html";
-    }, 9000);
+    });
+    
     
 
+}
+
+function iniciarSesionVidente()
+{
+    window.location = "principal-vidente.html";
 }
 
 function registrarse() {
