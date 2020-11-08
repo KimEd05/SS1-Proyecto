@@ -89,32 +89,30 @@ function capturarFoto() {
 function register() {
     var usuario = document.getElementById("user-sign").value;
     var pass = document.getElementById("pass-sign").value;
-    if(pass !== document.getElementById("rep-sign").value) {
-        alert("Las contraseñas no coinciden.");
-    } else {
-        var raw = JSON.stringify({"user":usuario, "password":pass, "foto":imagensrc});
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-        fetch("https://d2mkcjc0c59xy8.cloudfront.net/adduser", requestOptions)
-        .then(response => response.text())
-        .then(result => {
-            var res = JSON.parse(result)
-            if(res.estado === "ok") {
-                imagensrc = "";
-                alert("Registro finalizado!");
-                window.location = "index.html";
-            } else {
-                alert("Credenciales incorrectas");
-            }
-        })
-        .catch(error => {
+ 
+    var raw = JSON.stringify({"cui":usuario, "nombre":pass, "sourceBase64":imagensrc});
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    fetch("https://yfsgst38xj.execute-api.us-east-2.amazonaws.com/develop/serverless/postRegistro", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+        
+        var res = JSON.parse(result)
+        if(res.estado === "ok") {
+            imagensrc = "";
+            alert("Registro finalizado!");
+            window.location = "index.html";
+        } else {
             alert("Credenciales incorrectas");
-            console.log('error', error)
-        });
-    }
-     
+        }
+    })
+    .catch(error => {
+        alert("Credenciales incorrectas");
+        console.log('error', error)
+    });
+    
 }
