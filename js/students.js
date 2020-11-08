@@ -83,7 +83,7 @@ async function funcion_inicial()
  
     });
     
-    document.getElementById("pageBody").addEventListener("click", function(e) {
+    
         if (id_voto == -1) {
             document.getElementById('audioPapeleta').play();
             setTimeout(() => {
@@ -200,10 +200,11 @@ async function funcion_inicial()
                     }, 7000);
                 }, 9000);
             }, 15000);
-        } else {
+        } 
+        document.getElementById("pageBody").addEventListener("click", function(e) {
             console.log("id voto es " + id_voto);
             vote(id_voto);
-        }
+        
         
     });
 
@@ -225,7 +226,7 @@ function vote(id)
     .then(response => response.text())
     .then(result => {
         alert("Voto exitoso");
-        location.reload();
+        window.location = "principal-vidente.html";
     })
     .catch(error => {
         alert("Error");
