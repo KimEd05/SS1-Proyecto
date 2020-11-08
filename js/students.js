@@ -118,44 +118,42 @@ function funcion_inicial()
         }
     });*/
 
-    /*client.get('https://vv3p26ogll.execute-api.us-east-2.amazonaws.com/pro1-g8/serverless/get-asistencias', function(response) {
+    var client = new HttpClient();
+    client.get('https://yfsgst38xj.execute-api.us-east-2.amazonaws.com/develop/serverless/getVotos', function(response) {
         var contenedor = document.getElementById("container-lista-asistencias");
         var listado = JSON.parse(response);
         console.log(listado);
+            
+        var table = document.createElement("table");
+        table.className = "tabcontainer";
+
+        var thead = document.createElement("thead");
+        thead.innerHTML +=  "<tr>"+
+                                    "<th><h1><center>Candidato</center></h1></th>"+
+                                    "<th><h1><center>Partido</center></h1></th>"+
+                                    "<th><h1><center>Fotografía</center></h1></th>"+
+                                    "<th><h1><center>Votos</center></h1></th>"+
+                            "</tr>";
+
+        var tbody = document.createElement("tbody");
+            for(var j = 0; j < 21 ; j++){
+                tbody.innerHTML +=  "<tr>"+
+                                        "<td><center>" + listado[j]['nombre'] + "</center></td>"+
+                                        "<td><center>" + listado[j]['partido'] + "</center></td>"+
+                                        "<td><center><img src=\"https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Papeleta/" + listado[j]['id'] + ".jpg\" width=50></center></td>"+
+                                        "<td><center>" + listado[j]['votos']+ "</center></td>"+
+                                    "</tr>";
+            }
+
+            
+        table.appendChild(thead);
+        table.appendChild(tbody);
         
-        for(var i = 0; i < listado.length ; i++) {
-            var fila = document.createElement("div");
-            fila.innerHTML =    "<h3><center>" + listado[i]['Grupo'] + "</center></h3>" +
-                                "<h2><a href=\"https://pro1-images-grupo8.s3.us-east-2.amazonaws.com/" + listado[i]['Foto_Grupo'] + "\" target=\"_blank\">Ver Imagen</a></h2>";
             
-            var table = document.createElement("table");
-            table.className = "tabcontainer";
-
-            var thead = document.createElement("thead");
-            thead.innerHTML +=  "<tr>"+
-                                        "<th><h1><center>Estudiante</center></h1></th>"+
-                                        "<th><h1><center>Imagen Estudiante</center></h1></th>"+
-                                        "<th><h1><center>Asistió</center></h1></th>"+
-                                "</tr>";
-
-            var tbody = document.createElement("tbody");
-                for(var j = 0; j < listado[i]['Asistencia'].length ; j++){
-                    tbody.innerHTML +=  "<tr>"+
-                                            "<td><center>" + listado[i]['Asistencia'][j]['Estudiante']['S'] + "</center></td>"+
-                                            "<td><center><a href=\"https://pro1-images-grupo8.s3.us-east-2.amazonaws.com/" + listado[i]['Asistencia'][j]['Foto_Estudiante']['S'] + "\" target=\"_blank\">Ver</a></center></td>"+
-                                            "<td><center>" + listado[i]['Asistencia'][j]['asistencia']['S'] + "</center></td>"+
-                                        "</tr>";
-                }
-
-            
-            table.appendChild(thead);
-            table.appendChild(tbody);
-            fila.appendChild(table);
-              
-            contenedor.appendChild(fila);
-            contenedor.innerHTML += "<br><br>"
-        }
-    });*/
+        contenedor.appendChild(table);
+        contenedor.innerHTML += "<br><br>"
+        
+    });
 }
 
 function promptFile(contentType, multiple) {
