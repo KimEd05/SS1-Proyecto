@@ -1,3 +1,5 @@
+var id_voto = -1;
+
 var HttpClient = function() {
     this.get = function(aUrl, aCallback) {
         var anHttpRequest = new XMLHttpRequest();
@@ -13,8 +15,9 @@ var HttpClient = function() {
 }
 
 
-function funcion_inicial()
+async function funcion_inicial()
 {
+    
     var contenedor = document.getElementById("container-lista-estudiantes");
     for(var i = 0; i < 7; i++) {
         var fila = document.createElement("div");
@@ -43,11 +46,6 @@ function funcion_inicial()
         contenedor.innerHTML += "<br>"
     }
 
-    for(var i = 1; i < 22; i++) {
-        document.getElementById("_" + i).addEventListener("click", function() {
-            console.log(this.id.replace("_",""));
-        });
-    }
 
     var client = new HttpClient();
     client.get('https://yfsgst38xj.execute-api.us-east-2.amazonaws.com/develop/serverless/getVotos', function(response) {
@@ -82,13 +80,157 @@ function funcion_inicial()
             
         contenedor.appendChild(table);
         contenedor.innerHTML += "<br><br>"
+ 
+    });
+    
+    document.getElementById("pageBody").addEventListener("click", function(e) {
+        if (id_voto == -1) {
+            document.getElementById('audioPapeleta').play();
+            setTimeout(() => {
+                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/1.mp3";
+                document.getElementById('audioPapeleta').play();
+                id_voto = 1;
+                console.log(id_voto);
+                setTimeout(() => {
+                    document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/2.mp3";
+                    document.getElementById('audioPapeleta').play();
+                    id_voto++;
+                    console.log(id_voto);
+                    setTimeout(() => {
+                        document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/3.mp3";
+                        document.getElementById('audioPapeleta').play();
+                        id_voto++;
+                        console.log(id_voto);
+                        setTimeout(() => {
+                            document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/4.mp3";
+                            document.getElementById('audioPapeleta').play();
+                            id_voto++;
+                            console.log(id_voto);
+                            setTimeout(() => {
+                                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/5.mp3";
+                                document.getElementById('audioPapeleta').play();
+                                id_voto++;
+                                console.log(id_voto);
+                                setTimeout(() => {
+                                    document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/6.mp3";
+                                    document.getElementById('audioPapeleta').play();
+                                    id_voto++;
+                                    console.log(id_voto);
+                                    setTimeout(() => {
+                                        document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/7.mp3";
+                                        document.getElementById('audioPapeleta').play();
+                                        id_voto++;
+                                        setTimeout(() => {
+                                            document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/8.mp3";
+                                            document.getElementById('audioPapeleta').play();
+                                            id_voto++;
+                                            setTimeout(() => {
+                                                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/9.mp3";
+                                                document.getElementById('audioPapeleta').play();
+                                                id_voto++;
+                                                setTimeout(() => {
+                                                    document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/10.mp3";
+                                                    document.getElementById('audioPapeleta').play();
+                                                    id_voto++;
+                                                    setTimeout(() => {
+                                                        document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/11.mp3";
+                                                        document.getElementById('audioPapeleta').play();
+                                                        id_voto++;
+                                                        setTimeout(() => {
+                                                            document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/12.mp3";
+                                                            document.getElementById('audioPapeleta').play();
+                                                            id_voto++;
+                                                            setTimeout(() => {
+                                                                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/13.mp3";
+                                                                document.getElementById('audioPapeleta').play();
+                                                                id_voto++;
+                                                                setTimeout(() => {
+                                                                    document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/14.mp3";
+                                                                    document.getElementById('audioPapeleta').play();
+                                                                    id_voto++;
+                                                                    setTimeout(() => {
+                                                                        document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/15.mp3";
+                                                                        document.getElementById('audioPapeleta').play();
+                                                                        id_voto++;
+                                                                        setTimeout(() => {
+                                                                            document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/16.mp3";
+                                                                            document.getElementById('audioPapeleta').play();
+                                                                            id_voto++;
+                                                                            setTimeout(() => {
+                                                                                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/17.mp3";
+                                                                                document.getElementById('audioPapeleta').play();
+                                                                                id_voto++;
+                                                                                setTimeout(() => {
+                                                                                    document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/18.mp3";
+                                                                                    document.getElementById('audioPapeleta').play();
+                                                                                    id_voto++;
+                                                                                    setTimeout(() => {
+                                                                                        document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/19.mp3";
+                                                                                        document.getElementById('audioPapeleta').play();
+                                                                                        id_voto++;
+                                                                                        setTimeout(() => {
+                                                                                            document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/20.mp3";
+                                                                                            document.getElementById('audioPapeleta').play();
+                                                                                            id_voto++;
+                                                                                            setTimeout(() => {
+                                                                                                document.getElementById('audioPapeleta').src = "https://bucket-proyecto-ss1.s3.us-east-2.amazonaws.com/Audios/21.mp3";
+                                                                                                document.getElementById('audioPapeleta').play();
+                                                                                                id_voto++;
+                                                                                                setTimeout(() => {
+                                                                                                    
+                                                                                                }, 8000);
+                                                                                            }, 7000);
+                                                                                        }, 8000);
+                                                                                    }, 7000);
+                                                                                }, 8000);
+                                                                            }, 7000);
+                                                                        }, 8000);
+                                                                    }, 7000);
+                                                                }, 7000);
+                                                            }, 8000);
+                                                        }, 7000);
+                                                    }, 7000);
+                                                }, 8000);
+                                            }, 9000);
+                                        }, 8000);
+                                    }, 7000);
+                                }, 7000);
+                            }, 7000);
+                        }, 7000);
+                    }, 7000);
+                }, 9000);
+            }, 15000);
+        } else {
+            console.log("id voto es " + id_voto);
+            vote(id_voto);
+        }
         
     });
+
 }
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
 function vote(id) 
 {
-    console.log("Hola");
+    var raw = JSON.stringify({"id":String(id)});
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+    fetch("https://yfsgst38xj.execute-api.us-east-2.amazonaws.com/develop/serverless/postVoto", requestOptions)
+    .then(response => response.text())
+    .then(result => {
+        alert("Voto exitoso");
+        location.reload();
+    })
+    .catch(error => {
+        alert("Error");
+        console.log('error', error);
+    });
 }
 
 function getDataUrl(img) {

@@ -60,7 +60,11 @@ async function iniciarSesionCam() {
         alert("Credenciales incorrectas");
         console.log('error', error)
     });*/
-    window.location = "principal.html";
+    document.getElementById('audio').play()
+    setTimeout(() => {
+        window.location = "principal.html";
+    }, 9000);
+    
 
 }
 
