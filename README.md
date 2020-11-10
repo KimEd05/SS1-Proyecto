@@ -18,3 +18,8 @@ De la misma forma, existen otra serie de problemas que van asociados al error hu
 
 ## Arquitectura inicial
 ![Arquitectura Inicial](https://github.com/KimEd05/SS1-Proyecto/blob/main/Arquitectura%20Inicial.png?raw=true "Arquitectura Inicial")
+
+---
+
+## Implementación
+Link de [presentación](https://www.canva.com/design/DAEM5VEfGiw/6FUVPW6uzSMo3fZ54RBaBA/view?utm_content=DAEM5VEfGiw&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton).
